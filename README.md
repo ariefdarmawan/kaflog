@@ -23,7 +23,7 @@ Kaflog is a hook for EACIIT Toolkit LogEngine to publish log information into Ka
         "yyyyMMdd")
 
    // attach kafka publisher hook to log
-	log.AddHook(
+   log.AddHook(
         // Host = address of web application
         // Topic = name of Kafka topic
         // Brokers = list of Kafka brokers
@@ -33,6 +33,6 @@ Kaflog is a hook for EACIIT Toolkit LogEngine to publish log information into Ka
         "ERROR", "WARNING")
 
     // attach log to knot app
-	s := knot.NewServer().SetLogger(log)
+    s := knot.NewServer().SetLogger(log)
    ```
 5. Check and monitor
