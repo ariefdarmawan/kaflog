@@ -8,7 +8,7 @@ import (
 	"syscall"
 
 	"git.eaciitapp.com/sebar/knot"
-	"github.com/ariefdarmawan/blog/kaflog"
+	"github.com/ariefdarmawan/kaflog"
 	"github.com/eaciit/toolkit"
 )
 
@@ -43,9 +43,12 @@ func main() {
 		value := strings.ToLower(ctx.Request.URL.Query().Get("name"))
 
 		if value == "error" {
+			ctx.Write([]byte("You should see error from your kafka"), http.StatusOK)
 			panic("Panic from /action")
 		} else if value == "warning" {
+			ctx.Write([]byte("You should see warning from your kafka"), http.StatusOK)
 			s.Logger().Warning("warning from /action")
+			return
 		}
 
 		ctx.Write([]byte("All is good"), http.StatusOK)
