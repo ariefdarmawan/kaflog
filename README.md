@@ -25,7 +25,7 @@ Kaflog is a hook for EACIIT Toolkit LogEngine to publish log information into Ka
    cd docker
    MY_IP={IP} docker-compose up
    ```
-2. Use kafkacat, create a consumer to subscribe for topic
+2. Using kafkacat: create a consumer to subscribe for topic
    ```sh
    kafkacat -C -b server1:host1,serverN:hostN -t topicname -p 0
    ```
