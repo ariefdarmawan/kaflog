@@ -53,4 +53,8 @@ Kaflog is a hook for EACIIT Toolkit LogEngine to publish log information into Ka
     // attach log to knot app
     s := knot.NewServer().SetLogger(log)
    ```
-5. Check and monitor
+5. Run, check and monitor
+   ```sh
+   KAFKA_BROKERS=server1:host1,serverN:hostN KAFKA_TOPIC=foo go run main.go
+   ```
+  
