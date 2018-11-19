@@ -1,6 +1,24 @@
 # Kaflog
 Kaflog is a hook for EACIIT Toolkit LogEngine to publish log information into Kafka cluster
 
+## How to use
+- Initiate Log Engine
+  ```go
+  log := toolkit.NewLog(true,false,"./logs","","")
+  ```
+- Hook kafka log
+  ```go
+  // attach kafka publisher hook to log
+   log.AddHook(
+        // Host = address of web application
+        // Topic = name of Kafka topic
+        // Brokers = list of Kafka brokers
+        kaflog.Hook(host, topic, brokers...), 
+
+        // type of log will be published to Kafka
+        "ERROR", "WARNING")
+  ```
+  
 ## Running example
 1. Run docker compose to bring up zookeeper and kafka service
    ```bash
